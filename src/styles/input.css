@@ -1,0 +1,12 @@
+.input{
+    resize:none;
+
+    height: 500px;
+    margin-right: 100px;
+    padding: 10px;
+    flex:8;
+    border: 1px solid black;
+    border-radius: 20px;
+    outline: none;
+    font-size: 24px;
+}
