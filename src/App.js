@@ -7,12 +7,13 @@ import './styles/app.css'
 
 function App() { 
     const [stats, setStats] = useState({
+        charCount:0,
         wordCount: 0,
     });
 
     return(
         <div className='container'>
-            <Stats />
+            <Stats stats={stats} />
             <main className='main'>
                 <Input stats={stats} setStats={setStats} />
                 <List />    

@@ -2,7 +2,8 @@ import './styles/input.css'
 
 function Input({stats, setStats}){
     const handleChange = (e) =>{
-        setStats({...stats ,
+        setStats({...stats,
+                charCount: e.target.value.length,
                 wordCount: e.target.value.split(/\s+/).length
             });
     }
