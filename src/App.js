@@ -7,8 +7,10 @@ import './styles/app.css'
 
 function App() { 
     const [stats, setStats] = useState({
+        sentenceCount:0,
         charCount:0,
         wordCount: 0,
+        averageWordLength: 0,
     });
 
     return(
