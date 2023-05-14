@@ -1,5 +1,12 @@
+import { useEffect, useState } from "react";
+
 function Word({data}){
-    return <div className='word'>
+    const [isVisible, setIsVisible] = useState(false);
+    
+    useEffect(() =>{
+        setIsVisible(true);
+    }, [])
+    return <div className={'word' + (isVisible? ' word-visible':'')}>
         {data}
     </div>
 }
