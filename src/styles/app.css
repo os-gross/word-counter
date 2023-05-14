@@ -15,3 +15,78 @@
     display: flex;
     justify-content: center;
 }
+/* input */
+.input{
+    resize:none;
+
+    height: 500px;
+    margin-right: 100px;
+    padding: 10px;
+    flex:8;
+    border: 1px solid black;
+    border-radius: 20px;
+    outline: none;
+    font-size: 24px;
+}
+/* stats */
+.stats{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 ;
+}
+
+.stats__item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-right: 0;
+    font-size: 20px;
+    line-height: 150%;
+}
+.stats__item:first-child{
+    border-radius: 20px 0 0 20px;
+}
+.stats__item:last-child{
+    border-right: 1px solid black;
+    border-radius: 0 20px 20px 0;
+}
+
+.stats__number{
+    font-size: 25px;
+    font-weight: bolder;
+}
+/* List */
+.list{
+    flex:2;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Word */
+.word{
+    width: 100%;
+    border: 1px solid black;
+    padding: 30px 15px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 0;
+}
+.word:first-child:last-child{
+    border-radius: 20px;
+}
+
+.word:first-child{
+    border-radius: 20px 20px 0 0;
+}
+.word:last-child{
+    border-bottom: 1px solid black;
+    border-radius: 0 0 20px 20px;
+}

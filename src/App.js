@@ -12,13 +12,27 @@ function App() {
         wordCount: 0,
         averageWordLength: 0,
     });
+    const [words, setWords] = useState([]);
+
+    const handleChange = (e) =>{
+        const sentenceCount = e.target.value.trim().split(/[.?!]+/g).filter(item => item != "").length;
+        const charCount = e.target.value.length;
+        const words = e.target.value.replace(/[^\w\s\d]/g, "").trim().split(/\s+/).filter(item => item != "");
+        setWords(words);
+        const wordCount = words.length;
+        const averageWordLength = words.reduce((res, word) => res + word.length, 0) /wordCount;
+        setStats({...stats,
+            sentenceCount, charCount, wordCount, averageWordLength
+            });
+    }
+
 
     return(
         <div className='container'>
             <Stats stats={stats} />
             <main className='main'>
-                <Input stats={stats} setStats={setStats} />
-                <List />    
+                <Input onChange={handleChange}/>
+                <List words={words} />    
             </main>
         </div>
     )

@@ -1,5 +1,3 @@
-import './styles/stats.css'
-
 function Stats({stats}){
     return <div className='stats'>
         <div className='stats__item'>Sentence count

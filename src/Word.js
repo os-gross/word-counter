@@ -1,8 +1,6 @@
-import './styles/word.css'
-
-function Word(){
+function Word({data}){
     return <div className='word'>
-        
+        {data}
     </div>
 }
 
