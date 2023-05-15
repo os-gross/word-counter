@@ -14,18 +14,25 @@ function App() {
     });
     const [words, setWords] = useState([]);
 
-    const handleChange = (e) =>{
-        const sentenceCount = e.target.value.trim().split(/[.?!]+/g).filter(item => item != "").length;
-        const charCount = e.target.value.length;
-        const words = e.target.value.replace(/[^\w\s\d]/g, "").trim().split(/\s+/).filter(item => item != "");
-        setWords(words);
+    const updateStatsAndWords = (text) => {
+        const sentenceCount = text.trim().split(/[.?!]+/g).filter(item => item !== "").length;
+        const charCount = text.length;
+        const words = text.replace(/[^\w\s\d]/g, "").trim().split(/\s+/).filter(item => item !== "");
         const wordCount = words.length;
         const averageWordLength = words.reduce((res, word) => res + word.length, 0) /wordCount;
-        setStats({...stats,
-            sentenceCount, charCount, wordCount, averageWordLength
-            });
-    }
+        setStats({
+            sentenceCount,
+            charCount,
+            wordCount,
+            averageWordLength,
+        });
+        setWords(words);
+    };
 
+
+    const handleChange = (e) =>{
+        updateStatsAndWords(e.target.value);
+    }
 
     return(
         <div className='container'>
